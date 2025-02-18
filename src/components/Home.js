@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <div className="home">
       <header className="header">
-        <h1>Welcome to the Basketball Court Booking App</h1>
         <nav>
           <ul className="nav-links">
+            <li>
+              <Link to="/book">Book</Link>
+            </li>
             <li>
               <Link to="/my-bookings">My Bookings</Link>
             </li>
@@ -18,7 +20,8 @@ const Home = () => {
         </nav>
       </header>
       <main className="main-content">
-        <p>Book your basketball court time Now!</p>
+        <h1 className="main-h1">Basketball Court Booking App</h1>
+        <p className="main-p">Book your basketball court time Now!</p>
         <button className="book-now-btn">
           <Link to="/book">Book Now</Link>
         </button>
