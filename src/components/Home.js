@@ -22,7 +22,7 @@ const Home = () => {
       <main className="main-content">
         <h1 className="main-h1">Basketball Court Booking App</h1>
         <p className="main-p">Book your basketball court time Now!</p>
-        <button className="book-now-btn">
+        <button className="book-now-btn btn-primary">
           <Link to="/book">Book Now</Link>
         </button>
       </main>
