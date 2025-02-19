@@ -7,6 +7,7 @@ html {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .App {
