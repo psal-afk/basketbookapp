@@ -8,6 +8,7 @@ import Book from "./components/Book";
 import Contact from "./components/Contact";
 import images from "./images/img-2.jpg";
 import "./styles/Home.css";
+import AdminLogin from "./components/AdminLogin";
 
 function App() {
   const backgroundStyle = {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/my-bookings" element={<MyBookings />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book" element={<Book />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
         </Routes>
       </Router>
     </div>
