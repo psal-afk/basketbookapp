@@ -17,7 +17,7 @@ const Home = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/admin">Admin Login</Link>
+              <Link to="/admin-login">Admin</Link>
             </li>
           </ul>
         </nav>
