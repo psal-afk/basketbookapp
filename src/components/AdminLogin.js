@@ -6,7 +6,7 @@ const AdminLogin = () => {
     <div className="admin-login main">
       <div className="wrapper">
         <form action={""}>
-          <h1 style={{ color: "white" }}>Admin</h1>
+          <h1 style={{ color: "white" }}>Admin Login</h1>
           <div className="input-box">
             <input type="text" placeholder="Username" required />
             <FaUser style={{ color: "white" }} className="icon" />

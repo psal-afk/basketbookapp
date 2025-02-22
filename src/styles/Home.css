@@ -11,8 +11,11 @@
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   gap: 1rem;
+  font-size: 16px;
+  gap: 30px;
+  padding-right: 3rem;
 }
 
 .nav-links a {
