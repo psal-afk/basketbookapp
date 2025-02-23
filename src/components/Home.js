@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -17,7 +18,17 @@ const Home = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/admin-login">Admin</Link>
+              <Link to="/admin-login" className="login-link">
+                <FaUser
+                  className="login-icon"
+                  style={{
+                    margin: "3px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                />
+                Login/ Register
+              </Link>
             </li>
           </ul>
         </nav>
