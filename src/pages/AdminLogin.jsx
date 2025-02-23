@@ -22,7 +22,6 @@ const AdminLogin = () => {
               className="input-field"
               required
             />
-            <i className="material-symbols-rounded eye-icon">visibility_off</i>
             <i className="material-symbols-rounded">lock</i>
           </div>
 

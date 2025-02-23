@@ -5,12 +5,14 @@ import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
 import Contact from "./pages/Contact";
 import BookCourt from "./pages/BookCourt";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
+        <Route path="/home-page" element={<Home />} />
         <Route path="/book-court" element={<BookCourt />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/user-login" element={<UserLogin />} />

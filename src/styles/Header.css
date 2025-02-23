@@ -1,6 +1,9 @@
 .header {
   background: #f6aa1c;
-  padding: 0.8rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav {
@@ -26,4 +29,8 @@
 
 .nav-links a:hover {
   color: #941b0c;
+}
+
+.logo {
+  width: 200px;
 }

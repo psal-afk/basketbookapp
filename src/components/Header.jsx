@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="header">
+      {/* Link to the home page */}
+      <Link to="/">
+        <img src="logo.png" alt="Logo" className="logo" />
+      </Link>
       <nav className="nav">
         <ul className="nav-links">
           <li>
