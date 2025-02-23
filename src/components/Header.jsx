@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="header">
       {/* Link to the home page */}
-      <Link to="/">
+      <Link to="home-page">
         <img src="logo.png" alt="Logo" className="logo" />
       </Link>
       <nav className="nav">
