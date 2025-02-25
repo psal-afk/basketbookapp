@@ -1,13 +1,44 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
+
 const UserLogin = () => {
+
+  const {loginWithRedirect, isAuthenticated} = useAuth0();
+
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleSubmitEvent = (e) => {
+    e.preventDefault();
+    if (input.username !== "" && input.password !== "") {
+      //dispatch action from hooks
+    }
+    alert("please provide a valid input");
+  };
+
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="main-container">
       <div className="login-container user-login">
         <h2 className="form-title">Login in with</h2>
         <div className="social-login">
-          <button className="social-button">
-            <img src="googs.svg" alt="Google" className="social-icon" />
-            Google
-          </button>
+          {
+            !isAuthenticated &&(
+              <button className="social-button" onClick={() => loginWithRedirect()}>
+                <img src="googs.svg" alt="Google" className="social-icon" />
+                Google
+              </button>
+            )
+          }
           <button className="social-button">
             <img src="apple.svg" alt="Apple" className="social-icon" />
             Apple
@@ -17,7 +48,7 @@ const UserLogin = () => {
           <span>or</span>
         </p>
 
-        <form action="#" className="login-form">
+        <form action="#" className="login-form" onSubmit={handleSubmitEvent}>
           <div className="input-wrapper">
             <input
               type="email"

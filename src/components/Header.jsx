@@ -1,6 +1,8 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const {logout, isAuthenticated} = useAuth0();
   return (
     <header className="header">
       {/* Link to the home page */}
@@ -16,7 +18,16 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/user-login">Login</Link>
+            {
+              !isAuthenticated &&(
+                <Link to="/user-login">Login</Link>
+              )
+            }
+            {
+              isAuthenticated &&(
+                <Link to="#" onClick={() => logout()}>Logout</Link>
+              )
+            }
           </li>
           <li>
             <Link to="/admin-login">Admin</Link>
