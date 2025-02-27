@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const UserPage = () => {
+    const navigate = useNavigate();
 
     const handleSubmitUserInfoEvent = (e) => {
         e.preventDefault();
@@ -15,11 +16,22 @@ const UserPage = () => {
         alert("Payment Information Updated!")
     
     };
+
+    const logoutUser = (e) => {
+        e.preventDefault();
+        let text = "Want to Logout?";
+        if (confirm(text) == true) {
+          alert("You are logout!");
+          navigate("/user-login");
+        } 
+        
+    
+    };
   return (
     <div className="admin-page">
       <h1>Basketball Player Dashboard</h1>
         <div className="user-dash">
-            <h3>Welcome, John Doe</h3>
+            <h3>Welcome, John Doe.. <a href="#"  onClick={logoutUser}>Logout</a></h3>
 
             <div className="user-info">
                 <h3>Personal Information</h3>
