@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const AdminPage = () => {
     const navigate = useNavigate();
-    
+
     const logoutUser = (e) => {
         e.preventDefault();
         let text = "Want to Logout?";
         if (confirm(text) == true) {
           alert("You are logout!");
-          navigate("/user-login");
+          navigate("/admin-login");
         } 
         
     
