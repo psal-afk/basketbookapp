@@ -6,6 +6,8 @@ import AdminLogin from "./pages/AdminLogin";
 import Contact from "./pages/Contact";
 import BookCourt from "./pages/BookCourt";
 import Home from "./pages/Home";
+import AdminPage from "./pages/admin/AdminPage";
+import UserPage from "./pages/user/UserPage"
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/user-login" element={<UserLogin />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/admin-page" element={<AdminPage />} />
+        <Route path="/user-page" element={<UserPage />} />
       </Routes>
     </Router>
   );
