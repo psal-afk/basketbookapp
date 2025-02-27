@@ -1,8 +1,25 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AdminPage = () => {
+    const navigate = useNavigate();
+    
+    const logoutUser = (e) => {
+        e.preventDefault();
+        let text = "Want to Logout?";
+        if (confirm(text) == true) {
+          alert("You are logout!");
+          navigate("/user-login");
+        } 
+        
+    
+    };
   return (
     <div className="admin-page">
       <h1>Administration Dashboard</h1>
+      <br />
+      <h2>Welcome, Administrator! <a href="#"  onClick={logoutUser}>Logout</a></h2>
+      <br />
         <div className="court-lists">
             <div className="court-item">
                 <h2>Court A</h2>
