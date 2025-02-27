@@ -21,6 +21,9 @@ const Header = () => {
           <li>
             <Link to="/admin-login">Admin</Link>
           </li>
+          <li>
+            <Link to="/register-page">Register</Link>
+          </li>
         </ul>
       </nav>
     </header>
