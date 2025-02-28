@@ -8,6 +8,8 @@ import BookCourt from "./pages/BookCourt";
 import Home from "./pages/Home";
 import AdminPage from "./pages/AdminPage";
 import Register from "./pages/Register";
+import FindViewCourt from "./pages/FindViewCourt";
+import CourtBooking from "./pages/CourtBooking";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-page" element={<AdminPage />} />
         <Route path="/register-page" element={<Register />} />
+        <Route path="/find-viewcourt" element={<FindViewCourt />} />
+        <Route path="/court-booking" element={<CourtBooking />} />
       </Routes>
     </Router>
   );
