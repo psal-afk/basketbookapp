@@ -12,7 +12,7 @@ const Header = () => {
       <nav className="nav">
         <ul className="nav-links">
           <li>
-            <Link to="/book-court">Book</Link>
+            <Link to="/book-court">Booking Status</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
@@ -31,6 +31,15 @@ const Header = () => {
           </li>
           <li>
             <Link to="/admin-login">Admin</Link>
+          </li>
+          <li>
+            <Link to="/register-page">Register</Link>
+          </li>
+          <li>
+            <Link to="/find-viewcourt">FindViewCourt</Link>
+          </li>
+          <li>
+            <Link to="/court-booking">CourtBooking</Link>
           </li>
         </ul>
       </nav>
