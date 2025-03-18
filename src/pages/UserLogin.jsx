@@ -1,9 +1,25 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
 
   const {loginWithRedirect, isAuthenticated} = useAuth0();
+
+  const navigate = useNavigate();
+  const database = [
+    {
+      username: "user1@basketbook.ca",
+      password: "pass1"
+    },
+    {
+      username: "user2@basketbook.ca",
+      password: "pass2"
+    }
+  ];
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const [input, setInput] = useState({
     username: "",
@@ -12,18 +28,38 @@ const UserLogin = () => {
 
   const handleSubmitEvent = (e) => {
     e.preventDefault();
-    if (input.username !== "" && input.password !== "") {
-      //dispatch action from hooks
+    if (username!== "" && password !== "") {
+          // Find user login info
+          const userData = database.find((user) => user.username === username);
+          // Compare user info
+          if (userData) {
+            if (userData.password !== password) {
+              // Invalid password
+              alert("Wrong password");
+            } else {
+              alert("Login success");
+              navigate('/user-page');
+            }
+          } else {
+            // Username not found
+            alert("Login error");
+          }
+    }else{
+      alert("please provide a valid input");
     }
-    alert("please provide a valid input");
+    
   };
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setInput((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const loginWithRedirectGoogle = (e) => {
+    e.preventDefault();
+    alert("Google Login");
+    navigate('/user-page');
+  };
+
+  const loginWithRedirectApple = (e) => {
+    e.preventDefault();
+    alert("Apple Login");
+    navigate('/user-page');
   };
 
   return (
@@ -31,15 +67,11 @@ const UserLogin = () => {
       <div className="login-container user-login">
         <h2 className="form-title">Login in with</h2>
         <div className="social-login">
-          {
-            !isAuthenticated &&(
-              <button className="social-button" onClick={() => loginWithRedirect()}>
+              <button className="social-button" onClick={loginWithRedirectGoogle}>
                 <img src="googs.svg" alt="Google" className="social-icon" />
                 Google
               </button>
-            )
-          }
-          <button className="social-button">
+          <button className="social-button" onClick={loginWithRedirectApple}>
             <img src="apple.svg" alt="Apple" className="social-icon" />
             Apple
           </button>

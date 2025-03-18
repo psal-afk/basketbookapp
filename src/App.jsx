@@ -10,12 +10,13 @@ import UserLogin from "./pages/UserLogin";
 import AdminLogin from "./pages/AdminLogin";
 import Contact from "./pages/Contact";
 import BookCourt from "./pages/BookCourt";
-import AdminPage from "./pages/AdminPage";
+import AdminPage from "./pages/admin/AdminPage";
 import Register from "./pages/Register";
 import FindViewCourt from "./pages/FindViewCourt";
 import CourtBooking from "./pages/CourtBooking";
 import PaymentPage from "./pages/PaymentPage";
 import HomePage from "./pages/HomePage";
+import UserPage from "./pages/user/UserPage"
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/find-viewcourt" element={<FindViewCourt />} />
           <Route path="/court-booking" element={<CourtBooking />} />
           <Route path="/payment-page" element={<PaymentPage />} />
+          <Route path="/user-page" element={<UserPage />} />
         </Routes>
       </Router>
     </>

@@ -41,9 +41,10 @@ const AdminPage = () => {
     <div className="admin-page">
       <h1>Administration Dashboard</h1>
       <br />
-      <h2>Welcome, Administrator! <a href="#"  onClick={logoutUser}>Logout</a></h2>
-        <div className="button-container">
-            <a href="#"  onClick={showForm}>Add Court</a>
+      <div class="content-container">
+      <h3>Welcome, Administrator! <a href="#" className="logout-button" onClick={logoutUser}>Logout</a></h3>
+        <div>
+            <a  className="button-container" href="#"  onClick={showForm}>Add Court</a>
         </div>
         {isOpen && (
             <div class="add-new-court-container">
@@ -151,6 +152,7 @@ const AdminPage = () => {
 
             <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
             <br />
+        </div>
         </div>
     </div>
   );
