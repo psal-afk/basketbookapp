@@ -468,7 +468,7 @@ h2 {
   width: 90%;
   padding: 8px;
   font-size: 14px;
-  background-color: #4caf50;
+  background-color: #e64a19;
   color: white;
   border: none;
   border-radius: 5px;
@@ -477,7 +477,7 @@ h2 {
 }
 
 .team-section button:hover {
-  background-color: #45a049;
+  background-color: #e64a19;
 }
 
 .court-tracking-container {
@@ -547,7 +547,7 @@ select {
 button {
   width: 100%;
   padding: 12px;
-  background-color: #4caf50;
+  background-color: #e64a19;
   color: white;
   border: none;
   border-radius: 5px;
