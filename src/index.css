@@ -268,3 +268,29 @@ body {
 .input-wrapper img{
   width: 250px;
 }
+
+.button-container{
+  text-align: right;
+  margin-bottom: 30px;
+}
+.button-container a, .add-button{
+  width: 200px;
+  background-color: #e67e22;
+  padding: 8px 10px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #f1eff9;
+  text-decoration: none;
+  border: 1px solid #333;
+}
+
+.add-court-form p{
+  margin-bottom: 5px;
+}
+.add-court-form p input, .add-court-form p select{
+  margin-left: 10px;
+}
+.add-new-court-container{
+  border: 1px solid #333;
+  padding: 20px;
+}
