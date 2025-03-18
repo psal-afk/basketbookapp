@@ -1,30 +1,34 @@
-import React, { useState } from 'react';
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const CourtBookings = () => {
   // Court Booking States
-  const [bookingType, setBookingType] = useState('guest');
-  const [court, setCourts] = useState('');
+  const [bookingType, setBookingType] = useState("guest");
+  const [court, setCourts] = useState("");
   const [players, setPlayer] = useState(1);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   // Team Management States
-  const [searchTeam, setSearchTeam] = useState('');
-  const [createTeam, setCreateTeam] = useState('');
+  const [searchTeam, setSearchTeam] = useState("");
+  const [createTeam, setCreateTeam] = useState("");
   const [teams, setTeams] = useState([]); // Mock team storage
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   // Handle Court Booking Submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Booking confirmed!\nType: ${bookingType}\nCourt: ${court}\nPlayers: ${players}\nName: ${name}`);
+    alert(
+      `Booking confirmed!\nType: ${bookingType}\nCourt: ${court}\nPlayers: ${players}\nName: ${name}`
+    );
   };
 
   // Handle Team Creation
   const handleCreateTeam = () => {
-    if (createTeam.trim() !== '') {
+    if (createTeam.trim() !== "") {
       setTeams([...teams, createTeam]);
       alert(`Team "${createTeam}" created successfully!`);
-      setCreateTeam('');
+      setCreateTeam("");
     }
   };
 
@@ -43,9 +47,13 @@ const CourtBookings = () => {
       <div className="booking-container">
         <h1>Basketball Court Booking</h1>
 
-        <form className="booking-form" onSubmit={handleSubmit}>  
+        <form className="booking-form" onSubmit={handleSubmit}>
           <label htmlFor="bookingType">Booking Type:</label>
-          <select id="bookingType" value={bookingType} onChange={(e) => setBookingType(e.target.value)}>
+          <select
+            id="bookingType"
+            value={bookingType}
+            onChange={(e) => setBookingType(e.target.value)}
+          >
             <option value="guest">Guest (One-time Game)</option>
             <option value="group">Group (Multiple Players)</option>
           </select>
@@ -60,7 +68,7 @@ const CourtBookings = () => {
             required
           />
 
-          {bookingType === 'group' && (
+          {bookingType === "group" && (
             <>
               <label htmlFor="players">Number of Players:</label>
               <input
@@ -85,8 +93,12 @@ const CourtBookings = () => {
             required
           />
 
-          <button type="submit">Book Court</button> 
+          <button type="submit">Book Court</button>
         </form>
+      </div>
+      <div className="pay">
+        {/* Use navigate to redirect to the payment page */}
+        <button onClick={() => navigate("/payment-page")}>Pay</button>
       </div>
 
       {/* Team Management Section */}
