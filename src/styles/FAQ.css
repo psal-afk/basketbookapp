@@ -13,12 +13,10 @@
   margin-bottom: 20px;
 }
 
-/* FAQ List */
 .faq-list {
   border-top: 1px solid #e0e0e0;
 }
 
-/* FAQ Item */
 .faq-item {
   border-bottom: 1px solid #e0e0e0;
   padding: 15px 0;
@@ -30,7 +28,6 @@
   background-color: #f9f9f9;
 }
 
-/* FAQ Question */
 .faq-question {
   display: flex;
   justify-content: space-between;
@@ -45,7 +42,6 @@
   color: #666;
 }
 
-/* FAQ Answer */
 .faq-answer {
   margin-top: 10px;
   font-size: 1rem;
@@ -57,7 +53,6 @@
   animation: fadeIn 0.3s ease;
 }
 
-/* Animation for FAQ Answer */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -69,7 +64,6 @@
   }
 }
 
-/* Active FAQ Item */
 .faq-item.active {
   background-color: #f5f5f5;
 }

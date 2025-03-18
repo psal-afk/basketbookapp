@@ -23,7 +23,7 @@ const PaymentPage = () => {
       if (!/^\d{0,3}$/.test(value)) return;
       setFormData({ ...formData, [name]: value });
     } else if (name === "expiryDate") {
-      let cleanedValue = value.replace(/\D/g, ""); // Remove non-numeric characters
+      let cleanedValue = value.replace(/\D/g, "");
 
       if (cleanedValue.length > 4) return;
 
@@ -70,7 +70,7 @@ const PaymentPage = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="payment-input" // Add this class
+            className="payment-input"
             required
           />
         </label>
@@ -82,7 +82,7 @@ const PaymentPage = () => {
             value={formData.cardNumber}
             onChange={handleChange}
             maxLength="19"
-            className="payment-input" // Add this class
+            className="payment-input"
             required
           />
         </label>
@@ -95,7 +95,7 @@ const PaymentPage = () => {
             onChange={handleChange}
             placeholder="MM/YY"
             maxLength="5"
-            className="payment-input" // Add this class
+            className="payment-input"
             required
           />
         </label>
@@ -107,13 +107,12 @@ const PaymentPage = () => {
             value={formData.cvv}
             onChange={handleChange}
             maxLength="3"
-            className="payment-input" // Add this class
+            className="payment-input"
             required
           />
         </label>
         <button type="submit" className="pay-now-button">
           {" "}
-          {/* Add this class */}
           Pay Now
         </button>
       </form>
