@@ -32,7 +32,7 @@ const UserPage = () => {
       <h1>Basketball Player Dashboard</h1>
         <div className="user-dash">
             <h3>Welcome, John Doe.. <a className="logout-button" href="#"  onClick={logoutUser}>Logout</a></h3>
-
+            <h4>Booking points: 0</h4>
             <div className="user-container">
 
             <div className="user-info">

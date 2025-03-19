@@ -6,6 +6,8 @@ const AdminPage = () => {
 
     const [courtName, setCourtName] = useState("");
     const [location, setLocation] = useState("");
+    const [hours, setHours] = useState("");
+    const [features, setFeatures] = useState("");
     const [contactName, setContactName] = useState("");
     const [contactEmail, setContactEmail] = useState("");
     const [contactNumber, setContactNumber] = useState("");
@@ -33,9 +35,10 @@ const AdminPage = () => {
     const addCourtSubmitEvent = (e) => {
         e.preventDefault();
 
-        setHtmlContent('<div class="court-item"><h2>' + courtName + '</h2><p>Location: '+location+'</p><p>Contact: '+contactName+' | Email: '+contactEmail+' | Phone: '+contactNumber+'</p><p>Satus:<select name="status" ><option >Open</option><option >Close</option></select></p></div>');
+        setHtmlContent('<div class="court-item"><h2>' + courtName + '</h2><p>Location: '+location+'</p><p>Hours: '+hours+'</p><p>Features: '+features+'</p><p>Contact: '+contactName+' | Email: '+contactEmail+' | Phone: '+contactNumber+'</p><p>Satus:<select name="status" ><option >Open</option><option >Close</option></select></p></div>');
         
         alert("Add new court!");
+        setIsOpen(false);
     }
   return (
     <div className="admin-page">
@@ -64,6 +67,22 @@ const AdminPage = () => {
                         className="input-field"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
+                        />
+                    </p>
+                    <p>Hours : 
+                        <input
+                        type="text"
+                        className="input-field"
+                        value={hours}
+                        onChange={(e) => setHours(e.target.value)}
+                        />
+                    </p>
+                    <p>Features : 
+                        <input
+                        type="text"
+                        className="input-field"
+                        value={features}
+                        onChange={(e) => setFeatures(e.target.value)}
                         />
                     </p>
                     <p>Contact Name : 
@@ -103,8 +122,10 @@ const AdminPage = () => {
       <br />
         <div className="court-lists">
             <div className="court-item">
-                <h2>Court A</h2>
-                <p>Location: 109 Falcon Street, London Ontario</p>
+                <h2>Central Park Court</h2>
+                <p>Location: London, ON</p>
+                <p>Hours: 8:00 AM - 10:00 PM</p>
+                <p>Features: Outdoor, Full Court, Membership Required</p>
                 <p>Contact: John Doe | Email: jd12@gmail.com | Phone: 123-456-7890</p>
                 <p>Satus:
                     <select name="status" >
@@ -115,8 +136,10 @@ const AdminPage = () => {
             </div>
 
             <div className="court-item">
-                <h2>Court B</h2>
-                <p>Location: Boyle Community, London Ontario</p>
+                <h2>Harlem Ballers Court</h2>
+                <p>Location: Vancouver, BC</p>
+                <p>Hours: 6:00 AM - 11:00 PM</p>
+                <p>Features: Indoor, Full Court, Public Access</p>
                 <p>Contact: James Doe | Email: jsd12@gmail.com | Phone: 321-456-7890</p>
                 <p>Satus:
                     <select name="status" >
@@ -127,8 +150,10 @@ const AdminPage = () => {
             </div>
 
             <div className="court-item">
-                <h2>Court C</h2>
-                <p>Location: Westlion, London Ontario</p>
+                <h2>Queens Playcourt</h2>
+                <p>Location: Ottawa, ON</p>
+                <p>Hours: 9:00 AM - 8:00 PM</p>
+                <p>Features: Indoor, Half Court, Membership Required</p>
                 <p>Contact: Jude Doe | Email: jdtt12@gmail.com | Phone: 433-456-7890</p>
                 <p>Satus:
                     <select name="status" >
@@ -139,8 +164,10 @@ const AdminPage = () => {
             </div>
 
             <div className="court-item">
-                <h2>Court D</h2>
-                <p>Location: Stronach, London Ontario</p>
+                <h2>Montreal Court</h2>
+                <p>Location: Montreal, QC</p>
+                <p>Hours: 7:00 AM - 9:00 PM</p>
+                <p>Features: Outdoor, Full Court, Free Entry</p>
                 <p>Contact: Jacob Doe | Email: jdcx12@gmail.com | Phone: 224-456-7890</p>
                 <p>Satus:
                     <select name="status" >

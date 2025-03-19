@@ -16,7 +16,8 @@ import FindViewCourt from "./pages/FindViewCourt";
 import CourtBooking from "./pages/CourtBooking";
 import PaymentPage from "./pages/PaymentPage";
 import HomePage from "./pages/HomePage";
-import UserPage from "./pages/user/UserPage"
+import UserPage from "./pages/user/UserPage";
+import ContactCourtPage from "./pages/user/ContactCourt"
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/court-booking" element={<CourtBooking />} />
           <Route path="/payment-page" element={<PaymentPage />} />
           <Route path="/user-page" element={<UserPage />} />
+          <Route path="/contact-court-page" element={<ContactCourtPage />} />
         </Routes>
       </Router>
     </>

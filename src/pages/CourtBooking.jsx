@@ -41,6 +41,14 @@ const CourtBookings = () => {
     }
   };
 
+  //
+  const askForDiscount = (e) => {
+    e.preventDefault();
+    alert("Discount Request sent!");
+
+  };
+
+
   return (
     <div className="page-container">
       {/* Court Booking Form */}
@@ -99,8 +107,22 @@ const CourtBookings = () => {
       <div className="pay">
         {/* Use navigate to redirect to the payment page */}
         <button onClick={() => navigate("/payment-page")}>Pay</button>
+        <br />
+        <br />
+        {/* contact the court by email */}
+        <div className="contact-court">
+          <button onClick={() => navigate("/contact-court-page")}>Contact Court</button>
+        </div>
+        <br />
+         {/* ask for discount */}
+         <div className="contact-court">
+          <button onClick={askForDiscount}>Ask for Discount</button>
+        </div>
+        <br />
+
       </div>
 
+      
       {/* Team Management Section */}
       <div className="team-container">
         <h2>Team Management</h2>

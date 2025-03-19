@@ -87,6 +87,11 @@ const FindViewCourt = () => {
     }
   }, [userLocation]);
 
+  const bookMark = (e) => {
+    e.preventDefault();
+    alert("Court Book Marked!")
+  }
+
   return (
     <div style={styles.container}>
       <h1>🏀 Basketball Courts Finder</h1>
@@ -105,6 +110,7 @@ const FindViewCourt = () => {
           {sortedCourts.map((court) => (
             <li key={court.id} style={styles.card}>
               <h3>{court.name}</h3>
+              <p className="book-mark"><a href="#" onClick={bookMark}>Favorite</a></p>
               <p>
                 📍 Location: {court.location} {/* the court location */}
                 <br />

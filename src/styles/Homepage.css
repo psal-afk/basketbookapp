@@ -26,7 +26,7 @@ h1 {
 .logout-button{
   float: right;
 }
-.logout-button, .button-container{
+.logout-button, .button-container, .book-mark a{
   background-color: orangered;
   color: aliceblue;
   padding: 5px;
@@ -60,4 +60,13 @@ h1 {
 }
 .court-item select{
   width: 120px;
+}
+.book-mark{
+  float: right;
+}
+.book-mark a{
+  font-size: 12px;
+}
+textarea{
+  border: 1px solid #b6b6b6;
 }
