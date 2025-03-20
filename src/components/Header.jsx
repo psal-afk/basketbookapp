@@ -41,6 +41,9 @@ const Header = () => {
           <li>
             <Link to="/court-booking">CourtBooking</Link>
           </li>
+          <li>
+            <Link to="/special-offers">SpecialOffers</Link>
+          </li>
         </ul>
       </nav>
     </header>

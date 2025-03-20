@@ -1,4 +1,5 @@
 import "../styles/FAQ.css";
+import SpecialOffers from "../pages/SpecialOffers";
 import { useState } from "react";
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);

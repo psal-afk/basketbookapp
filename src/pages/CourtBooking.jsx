@@ -1,29 +1,35 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const CourtBookings = () => {
-  // Court Booking States
   const [bookingType, setBookingType] = useState("guest");
   const [court, setCourts] = useState("");
   const [players, setPlayer] = useState(1);
   const [name, setName] = useState("");
 
-  // Team Management States
   const [searchTeam, setSearchTeam] = useState("");
   const [createTeam, setCreateTeam] = useState("");
-  const [teams, setTeams] = useState([]); // Mock team storage
+  const [teams, setTeams] = useState([]);
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [cardDetails, setCardDetails] = useState({
+    name: "",
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+  });
 
-  // Handle Court Booking Submission
+  const [rating, setRating] = useState(0); // Added rating state for reviews
+  const [reviewComment, setReviewComment] = useState(""); // Added comment for review
+
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(
-      `Booking confirmed!\nType: ${bookingType}\nCourt: ${court}\nPlayers: ${players}\nName: ${name}`
+      `Booking confirmed!\nType: ${bookingType}\nCourt: ${court}\nPlayers: ${Number(players)}\nName: ${name}`
     );
   };
 
-  // Handle Team Creation
   const handleCreateTeam = () => {
     if (createTeam.trim() !== "") {
       setTeams([...teams, createTeam]);
@@ -32,7 +38,6 @@ const CourtBookings = () => {
     }
   };
 
-  // Handle Team Search
   const handleSearchTeam = () => {
     if (teams.includes(searchTeam)) {
       alert(`Team "${searchTeam}" found!`);
@@ -41,20 +46,37 @@ const CourtBookings = () => {
     }
   };
 
-  //
+  const saveCardDetails = () => {
+    localStorage.setItem("savedCard", JSON.stringify(cardDetails));
+    alert("Card details saved for future use!");
+  };
+
   const askForDiscount = (e) => {
     e.preventDefault();
     alert("Discount Request sent!");
-
   };
 
+  const reviewCourt = () => {
+    if (rating > 0 && reviewComment.trim()) {
+      alert(`Court Reviewed! \nRating: ${rating} Star(s) \nComment: ${reviewComment}`);
+      setRating(0); // Reset rating after review submission
+      setReviewComment(""); // Reset comment after review submission
+    } else {
+      alert("Please provide a rating and comment for the review!");
+    }
+  };
+
+  const handlePlayerChange = (e) => {
+    const newValue = e.target.value;
+    if (newValue >= 1 && newValue <= 20) {
+      setPlayer(newValue);
+    }
+  };
 
   return (
     <div className="page-container">
-      {/* Court Booking Form */}
       <div className="booking-container">
         <h1>Basketball Court Booking</h1>
-
         <form className="booking-form" onSubmit={handleSubmit}>
           <label htmlFor="bookingType">Booking Type:</label>
           <select
@@ -85,7 +107,7 @@ const CourtBookings = () => {
                 min="1"
                 max="20"
                 value={players}
-                onChange={(e) => setPlayer(e.target.value)}
+                onChange={handlePlayerChange}
                 required
               />
             </>
@@ -100,34 +122,35 @@ const CourtBookings = () => {
             onChange={(e) => setName(e.target.value)}
             required
           />
-
           <button type="submit">Book Court</button>
+          <button onClick={() => navigate("/booking-notifications")}>Booking Notification</button> 
         </form>
       </div>
+
       <div className="pay">
-        {/* Use navigate to redirect to the payment page */}
         <button onClick={() => navigate("/payment-page")}>Pay</button>
         <br />
         <br />
-        {/* contact the court by email */}
+        <button onClick={() => navigate("/save-card-details")}>Save Card Details</button>     {/* to save the card details for the future use */}
+        <br />
+        <br />
         <div className="contact-court">
           <button onClick={() => navigate("/contact-court-page")}>Contact Court</button>
         </div>
         <br />
-         {/* ask for discount */}
-         <div className="contact-court">
+        <div className="contact-court">
           <button onClick={askForDiscount}>Ask for Discount</button>
         </div>
         <br />
-
+        <div className="contact-court">
+        <button onClick={() => navigate('/review-court-form')}>Review Court</button>    {/* button onclick for the review court */}
+        </div> 
+        <br />
       </div>
 
-      
-      {/* Team Management Section */}
       <div className="team-container">
         <h2>Team Management</h2>
 
-        {/* Search Team */}
         <div className="team-section">
           <h3>Search Team</h3>
           <input
@@ -139,7 +162,6 @@ const CourtBookings = () => {
           <button onClick={handleSearchTeam}>Search</button>
         </div>
 
-        {/* Create Team */}
         <div className="team-section">
           <h3>Create Team</h3>
           <input
@@ -150,6 +172,33 @@ const CourtBookings = () => {
           />
           <button onClick={handleCreateTeam}>Create</button>
         </div>
+      </div>
+
+      {/* Review court form Section */}
+      <div className="review-container">
+        <h2>Leave Your Review</h2>
+        <label htmlFor="rating">Ratings: </label>       {/* this is to choose the ratings */}
+        <select
+          id="rating"
+          value={rating}
+          onChange={(e) => setRating(Number(e.target.value))}         //this is to set the ratings and all
+        >
+          <option value={0}>Select rating</option>      {/* to select the ratings */}
+          <option value={1}>1 Star</option>
+          <option value={2}>2 Stars</option>
+          <option value={3}>3 Stars</option>
+          <option value={4}>4 Stars</option>
+          <option value={5}>5 Stars</option>
+        </select>
+
+        <br />
+        <label htmlFor="reviewComment">Comments: </label>     {/* this is for the review comments */}
+        <textarea
+          id="reviewComment"
+          value={reviewComment}
+          onChange={(e) => setReviewComment(e.target.value)}
+          placeholder="Please enter your review"      //this is placeholder for the review
+        />  
       </div>
     </div>
   );
