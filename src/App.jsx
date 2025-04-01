@@ -22,7 +22,8 @@ import ReviewCourtForm from "./pages/ReviewCourtForm"
 import SpecialOffers from "./pages/SpecialOffers";
 import BookingNotifications from "./pages/BookingNotification";
 import SaveCardButton from "./pages/SavePayment";
-
+import AdminBookingList from "./pages/admin/AdminBookingList";
+import AdminUpdateCourt from "./pages/admin/AdminUpdateCourt";
 
 const App = () => {
   return (
@@ -47,6 +48,9 @@ const App = () => {
           <Route path="/special-offers" element={<SpecialOffers />} />
           <Route path="/booking-notification" element={<BookingNotifications />} />
           <Route path="/save-card-details" element={<SaveCardButton />} />
+          <Route path="/admin-booking-list" element={<AdminBookingList />} />
+          <Route path="/admin-update-court" element={<AdminUpdateCourt />} />
+
         </Routes>
       </Router>
     </>
