@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import EarningsDashboard from "../user/EarningsDashboard";
+import TrackRevenue from "../user/TrackRevenue";
+import SetCourtEvent from "../user/SetCourtEvent";
+import CourtReviews from "../user/CourtReviews";
 
 const AdminPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +48,10 @@ const AdminPage = () => {
     <div className="admin-page">
       <h1>Administration Dashboard</h1>
       <br />
+      <EarningsDashboard />
+      <TrackRevenue/>
+      <SetCourtEvent/>
+      <CourtReviews/>
       <div class="content-container">
       <h3>Welcome, Administrator! <a href="#" className="logout-button" onClick={logoutUser}>Logout</a></h3>
         <div>
@@ -179,6 +187,7 @@ const AdminPage = () => {
 
             <div dangerouslySetInnerHTML={{__html: htmlContent}}></div>
             <br />
+
         </div>
         </div>
     </div>

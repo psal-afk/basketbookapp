@@ -22,6 +22,10 @@ import ReviewCourtForm from "./pages/ReviewCourtForm"
 import SpecialOffers from "./pages/SpecialOffers";
 import BookingNotifications from "./pages/BookingNotification";
 import SaveCardButton from "./pages/SavePayment";
+import EarningsDashboard from "./pages/user/EarningsDashboard";
+import TrackRevenue from "./pages/user/TrackRevenue";
+import SetCourtEvent from "./pages/user/SetCourtEvent";
+import CourtReviews from "./pages/user/CourtReviews";
 
 
 const App = () => {
@@ -47,6 +51,11 @@ const App = () => {
           <Route path="/special-offers" element={<SpecialOffers />} />
           <Route path="/booking-notification" element={<BookingNotifications />} />
           <Route path="/save-card-details" element={<SaveCardButton />} />
+          <Route path="/earnings-dashboard" element={<EarningsDashboard />} />
+          <Route path="/track-revenue" element={<TrackRevenue />} />
+          <Route path="/setcourt-event" element={<SetCourtEvent />} />
+          <Route path="/court-reviews" element={<CourtReviews />} />
+
         </Routes>
       </Router>
     </>
